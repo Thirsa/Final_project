@@ -52,12 +52,11 @@ My website should have a form where i can create new contacts, view all contacts
 Have three pages
 
 1) Index page that 
-	displays a list with all contacts// Maybe Ajax will get this
+	displays a list with all contacts// this route will send them back, I will store all the contacts in a variable and have Jquery loop through this variable's content and show the list of contacts
 	a search for contacts button this bar will update the list when typed in with the results that match either first or lastname.
 	display a box with the number of contacts in the list. so when you search the number gets updated as well
 	a create new contact button that will render the page where a new contact can be created
 	all the contacts will be selectable
-
 
 2) A create new contact page that renders a form with 
 	all input fields for a new contact
@@ -66,10 +65,9 @@ Have three pages
 3) A view contact page
 	a form with all the contacts details
 	an Edit button
-		once clicked, (maybe another page?)
-			a Save button
-			and a cancel button
-
+		once clicked render a new page with a create concact form with all the details prefilled, have Jquery show a:
+			a Save button //still decide if I want this per field or one button for the whole contact
+			and a cancel button //also still decide the above
 
 Routes:
 
@@ -79,8 +77,6 @@ Routes:
 	POST/contact
 
 	GET/contact
-
-	GET/a selection of contacts...or.. i modify the above route to check if a contact is searched for first.. eg if that search field contains text, then do a different kind of search. else, render all the contacts.. 
 
 	GET/:id/contact
 
