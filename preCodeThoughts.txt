@@ -1,0 +1,114 @@
+I want my own database structure to store my contacts and a webapp to view, edit and delete them. I have to think about a synch function to get them in my phone.. 
+
+If I write this in React native for example, I will have an android app, as in fully functional with rights to use the call function in my phone??
+
+for all of the columns i also want the CreatedAt date!
+
+Tables "contacts"
+columns: 
+	primary key id
+	First name    REQUIRED
+	Middle ? Name
+	Last Name
+	Sex
+		Birthdate
+	day-month = REQUIRED, year optional? // or if year is current, ask for age? to figure out birthyear?
+	year
+
+//these seperate columns, because people can have more numbers, addresses, emails
+
+Table "Number"
+columns:
+	primary key id
+	//Do i want a seperate column for the kind of device? like mobile, housenumber (probably)
+	Primary ? (first one should be true and the rest false)	REQUIRED //prob not implementing in the first version
+	Number	
+	contacts_id
+
+Table "address"
+columns:
+	country
+	streetname
+	housenumber
+	postal code
+	city
+	contacts_id
+
+Table "email"
+columns:
+	primary key id
+	primary? (first email should be true and the rest false)
+	email 
+	contacts_id
+
+Table "website"
+columns:
+	primary key id
+	website
+	contacts_id
+
+My website should have a form where i can create new contacts, view all contacts, view one contact (with all fields), edit or delete a contact from the 'view all contacts'
+
+Have three pages
+
+1) Index page that 
+	displays a list with all contacts// Maybe Ajax will get this
+	a search for contacts button this bar will update the list when typed in with the results that match either first or lastname.
+	display a box with the number of contacts in the list. so when you search the number gets updated as well
+	a create new contact button that will render the page where a new contact can be created
+	all the contacts will be selectable
+
+
+2) A create new contact page that renders a form with 
+	all input fields for a new contact
+	a submit button to actually save the contact
+
+3) A view contact page
+	a form with all the contacts details
+	an Edit button
+		once clicked, (maybe another page?)
+			a Save button
+			and a cancel button
+
+
+Routes:
+
+	GET/index show index page
+		return all contacts, to display in the middle section, and the details of the first contact in that list to the third section.
+
+	POST/contact
+
+	GET/contact
+
+	GET/a selection of contacts...or.. i modify the above route to check if a contact is searched for first.. eg if that search field contains text, then do a different kind of search. else, render all the contacts.. 
+
+	GET/:id/contact
+
+	PUT/:id/contact (maybe use a POST, since the html form only handles Post and GET)
+
+	DELETE/:id/contact (maybe use a POST, since the html form only handles Post and GET)
+
+
+Questions:
+	on the first page, do I want the GET/index route to return all the contacts, or do I want the (Ajax) GET/:id's/contact route to do that? because when i search for a contact I want the same list to be updated by Ajax... or should i display a new page with another list? I'm thinking it should be the Ajax part already 
+Answer: I could also download all of the contacts with the index route, store those in a variable, have Jquery show my contacts, and as i type in the search bar update the list.
+
+	on the third page, when viewing a contact with the details, when the user hits the "edit" button, do I render the create contact form (maybe the same create new contact form) with all the contacts data presented as text? how does that happen usually? 
+Answer:  maybe have all fields be editable separately? hide save and cancel and onClik have Jquery show this.
+
+	on the third page when all the data is presented, if i want to copy the number for instance, how I can select the data by dubble clicking is handles by the browser right? 
+
+	How will i be able to modify a contact by only deleting a number or something similar? Do I just remove that field? how will I be able to get it back?
+
+Answer: show a x button, when the button is clicked, it wipes the data from the field, and stores it in a client side variable, so that if cancel is clicked, the data is restored
+
+
+Planning:
+
+Within two days I want to have my database structure (minimalistic) and a possibility to view all my contacts, view the details of one contact and be able to add contacts. Maybe delete contacts as well. I have to know if the index route will render the contacts, or if the Ajax route will ... I guess Jquery will do it
+
+By friday I want to have my searchbar on page one and a working Jquery functionality that either updates the same list as you search for users. I also want to have made a choice on which solution I will use to edit a contact. (edit and save each component, or have one final save button, or...)
+
+by midway next week I want to be able to edit parts of a contact
+
+by friday next week, I should be able to do the first sentence of this file. 
