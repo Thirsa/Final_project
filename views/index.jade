@@ -1,0 +1,93 @@
+doctype html
+html
+	head
+		script(type="text/javascript" src='http://code.jquery.com/jquery-2.2.0.js')
+		script(type="text/javascript" src="../js/myjs.js")
+		link(rel="stylesheet" type="text/css" href="../css/styles.css")
+		script.
+			$(document).ready(function() {
+				$('.contactFromList').click(function () {
+					// alert('Hello!')
+					var id = $('#contactFirstName').val()
+					console.log (id)
+					$.get('/contact/' + id, function (request, response){
+						console.log("MY ID"+id)
+						console.log ("request" + request.firstName)
+						console.log ("response" + response)
+						$('#contactFirstName').val() === ("hooi")
+					});
+				});
+				// $('.numberButton').click(function (){
+				// 	var newDiv = $(document.createElement('div'));
+				// 	newDiv.addClass('number');
+				// 	newDiv.insertBefore(numberButton)
+				// 	newDiv.append('.appendThisOne')
+				// })
+
+				$('.numberButton').click(function (){
+					var newDiv = $(document.createElement('button'));
+					newDiv.addClass('number');
+					newDiv.insertBefore(numberButton)
+					newDiv.append('.number')
+				})				
+				// if $('#checkbox').val()=== true;
+				// var array = 
+			});	
+	body
+		h1(style='text-align: center;') Welcome Thirsa
+		div.wrapper
+			div(id='contactList')
+				h3 Here are all your contacts!
+					button #{allContacts.length}
+				div(id='contactDivList') 
+					ul(id='contactListUl') 
+						each contact in allContacts 
+							li(id='contactFromList' class='contactFromList') #{contact.firstName} #{contact.preFix} #{contact.lastName}
+								input(type='checkbox' id='checkbox')
+				form(method='post' action='/contact/delete')
+					input(type='submit' value='Delete selection' class='deleteSelection')
+			div(id='contactDetails')
+				form
+					input(id='street')
+			div(id='newContactForm')
+				h2=message
+				form(method='post' action='/contact' class='createContactForm')
+					p NAW
+					input(name='firstName' placeholder='firstName')
+					br
+					input(name='secondName' placeholder='secondName')
+					br
+					input(name='preFix' placeholder='preFix')
+					input(name='lastName' placeholder='lastName')
+					br
+					input(name='sex' placeholder='sex')
+					br
+					p Number 
+					div(class='appendThisOne')
+						div(id='number' class='number')
+							input(name='type' placeholder='Device type' id='numberDevice') 
+							input(name='phoneNumber' placeholder='number' id='numberNumber') 
+							button(value='+' id='numberButton' class='numberButton') +
+					br
+					p Address
+					input(name='country' placeholder='country')
+					br
+					input(name='city' placeholder='City') 
+					input(name='postalCode' placeholder='Postal Code') 
+					br
+					input(name='street' placeholder='street')
+					input(name='number' placeholder='house number')
+					br
+					p Birthday 
+					input(name='day' placeholder='day') 
+					input(name='month' placeholder='month')
+					input(name='year' placeholder='year')
+					br
+					p Email
+					input(name='email' placeholder='email')
+					br
+					p Website
+					input(name='website' placeholder='Website')
+					br 
+					br
+					input(type='submit' class='createContact' value='Create Contact')

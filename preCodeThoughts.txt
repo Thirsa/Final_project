@@ -11,11 +11,14 @@ columns:
 	Middle ? Name
 	Last Name
 	Sex
-		Birthdate
-	day-month = REQUIRED, year optional? // or if year is current, ask for age? to figure out birthyear?
-	year
 
 //these seperate columns, because people can have more numbers, addresses, emails
+
+Table "Birthday"
+columns:
+	day
+	month
+	year
 
 Table "Number"
 columns:
