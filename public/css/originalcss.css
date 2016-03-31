@@ -1,0 +1,122 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	background-color: lightyellow;
+}
+
+#contactList, #contactDetails, #newContactForm {
+	float: left;
+	width: 33%;
+	height:100%;
+	/*display: inline-block;*/
+}
+
+#contactDetails {
+
+	border-left: 1px solid brown;
+	border-right: 1px solid brown;
+}
+
+/*#contactDetails {
+	float: right;
+}*/
+
+#newContactForm input {
+	height: 30px;
+	line-height: 30px;
+}
+
+#contactFromList {
+	border-bottom: 1px solid green;
+	width: 99%;
+	height: 30px;
+	line-height: 30px;
+}
+
+#contactFromList:hover {
+	cursor:pointer; 
+}
+
+#contactDivList {
+	margin-top: 5%;
+	border: 1px solid cyan;
+	height: 85%;
+	width: 80%;
+	overflow-y: auto;
+}
+
+.createContact {
+	height: 60px;
+	width: 200px;
+	background-color: lightgreen;
+	border-radius: .5em;
+/*	margin-left: auto;
+	margin-right: auto;*/
+}
+
+#contactListUl {
+	/*display: inline-block;*/
+}
+
+#checkbox {
+	border-left: 1px solid red;
+	width: 30px;
+	height: 30px;
+	float: right;
+}
+
+#newContactForm input {
+	border-radius: .5em;
+}
+
+#number {
+	width: 100%;
+	border: 1px solid red;
+	height: 30px;
+}
+
+/*#numberButton {
+	width: 50px;
+	height: 50px;
+
+}*/
+
+
+
+#numberButton {
+	width: 30px;
+	height: 30px;
+	/*line-height: 30px;*/
+
+}
+
+#numberDevice, #numberNumber {
+	width: 44%;
+	height: 100%;
+}
+
+.deleteSelection {
+	width: 150px;
+	height: 30px;
+	border-radius: .5em;
+	background-color: lightgreen;
+}
+
+.deleteSelection:hover{
+	cursor: pointer;
+}
+
+.wrapper {
+	width: 97%;
+	height: 92%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid lightblue;
+	border-radius: .5em;
+	background-color: pink;
+}

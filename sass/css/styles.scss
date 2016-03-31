@@ -1,0 +1,123 @@
+//colors
+$color_half_and_half_approx: lightyellow;
+$color_mexican_red_approx:  brown;
+$color_japanese_laurel_approx:  green;
+$cyan_aqua:  cyan;
+$color_granny_smith_apple_approx: lightgreen;
+$red:  red;
+$color_regent_st_blue_approx:  lightblue;
+$pink: pink;
+
+//@extend-elements
+//original selectors
+//html, body
+%extend_1 {
+	width: 100%;
+	height: 100%;
+	background-color: $color_half_and_half_approx;
+}
+
+//original selectors
+//#contactList, #contactDetails, #newContactForm
+%extend_2 {
+	float: left;
+	width: 33%;
+	height: 100%;
+}
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	@extend %extend_1;
+}
+body {
+	@extend %extend_1;
+}
+#contactList {
+	@extend %extend_2;
+}
+#contactDetails {
+	@extend %extend_2;
+	border-left: 1px solid $color_mexican_red_approx;
+	border-right: 1px solid $color_mexican_red_approx;
+}
+#newContactForm {
+	@extend %extend_2;
+	input {
+		height: 30px;
+		line-height: 30px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: .5em;
+	}
+}
+#contactFromList {
+	border-bottom: 1px solid $color_japanese_laurel_approx;
+	width: 99%;
+	height: 30px;
+	line-height: 30px;
+	&:hover {
+		cursor: pointer;
+	}
+}
+#contactDivList {
+	margin-top: 5%;
+	border: 1px solid $cyan_aqua;
+	height: 85%;
+	width: 80%;
+	overflow-y: auto;
+}
+.createContact {
+	height: 60px;
+	width: 200px;
+	background-color: $color_granny_smith_apple_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: .5em;
+}
+#contactListUl {
+}
+#checkbox {
+	border-left: 1px solid $red;
+	width: 30px;
+	height: 30px;
+	float: right;
+}
+#number {
+	width: 100%;
+	border: 1px solid $red;
+	height: 30px;
+}
+#numberButton {
+	width: 30px;
+	height: 30px;
+}
+#numberDevice {
+	width: 44%;
+	height: 100%;
+}
+#numberNumber {
+	width: 44%;
+	height: 100%;
+}
+.deleteSelection {
+	width: 150px;
+	height: 30px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: .5em;
+	background-color: $color_granny_smith_apple_approx;
+	&:hover {
+		cursor: pointer;
+	}
+}
+.wrapper {
+	width: 97%;
+	height: 92%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid $color_regent_st_blue_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: .5em;
+	background-color: $pink;
+}
