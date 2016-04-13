@@ -254,7 +254,7 @@ Contacts.create({
 app.post('/contact/delete', function (response, request){
 	var data = request.params
 	console.log(data)
-	Contacts.destroy({include:[Addresses,Emails,Websites,Numbers,Birthdays], where:{id:112}}).then(function (succes){
+	Contacts.destroy({include:[Addresses,Emails,Websites,Numbers,Birthdays], where:{id:50}}).then(function (succes){
 		console.log (succes)
 		response.render('/')
 	}, function(error){
